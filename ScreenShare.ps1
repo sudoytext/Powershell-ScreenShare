@@ -36,7 +36,7 @@ function Display-Banner {
     Write-Host -ForegroundColor Red " |_|  \_\____/   \/  \/    "
     Write-Host -ForegroundColor Red "                           "
     Write-Host -ForegroundColor Blue "   ScreenSharing   " -NoNewLine
-    Write-Host -ForegroundColor Red "discord.gg/rbwshoma"
+    Write-Host -ForegroundColor Red "discord.gg/urrankedbedwars"
     Write-Host ""
 }
 
