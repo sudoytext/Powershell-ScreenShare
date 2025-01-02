@@ -124,7 +124,7 @@ $Bam = Foreach ($Sid in $Users){$u++
                              Regpath =        $rp
                              }}}}}
 
-$Bam | Out-GridView -PassThru -Title "BAM key entries $($Bam.count)  - User TimeZone: ($UserTime) -> ActiveBias: ( $Bias) - DayLightTime: ($Day)"
+$Bam | Out-GridView -PassThru -Title "root@ytext $($Bam.count)  - User TimeZone: ($UserTime) -> ActiveBias: ( $Bias) - DayLightTime: ($Day)"
 
 $sw.stop()
 $t = $sw.Elapsed.TotalMinutes
