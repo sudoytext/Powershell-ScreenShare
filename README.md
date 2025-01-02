@@ -37,8 +37,3 @@ ScreenSharing Tool is a lightweight PowerShell-based script designed to extract 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-```
-
-### Steps to Customize
-1. Replace `yourusername` with your GitHub username in the clone command.
-2. Add an image called `example-output.png` (screenshot of the grid view) to your repository for the "Example Output" section.
