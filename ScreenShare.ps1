@@ -23,24 +23,22 @@ function Get-Signature {
         return "File Was Not Found"
     }
 }
+Clear-Host
 
-# Display Banner
-function Display-Banner {
-    Clear-Host
-    Write-Host ""
-    Write-Host -ForegroundColor Red "  _____  ______          __"
-    Write-Host -ForegroundColor Red " |  __ \|  _ \ \        / /"
-    Write-Host -ForegroundColor Red " | |__) | |_) \ \  /\  / / "
-    Write-Host -ForegroundColor Red " |  _  /|  _ < \ \/  \/ /  "
-    Write-Host -ForegroundColor Red " | | \ \| |_) | \  /\  /   "
-    Write-Host -ForegroundColor Red " |_|  \_\____/   \/  \/    "
-    Write-Host -ForegroundColor Red "                           "
-    Write-Host -ForegroundColor Blue "   ScreenSharing   " -NoNewLine
-    Write-Host -ForegroundColor Red "discord.gg/urrankedbedwars"
-    Write-Host ""
-}
+Write-Host "";
+Write-Host "";
+Write-Host -ForegroundColor Red "  _____                _____             _            _ ";
+Write-Host -ForegroundColor Red " |  __ \              |  __ \           | |          | |";
+Write-Host -ForegroundColor Red " | |__) |___  ___  ___| |__) |__ _ _ __ | | _____  __| |";
+Write-Host -ForegroundColor Red " |  _  // _ \/ __|/ _ \  _  // _` | '_ \| |/ / _ \/ _` |";
+Write-Host -ForegroundColor Red " | | \ \ (_) \__ \  __/ | \ \ (_| | | | |   <  __/ (_| |";
+Write-Host -ForegroundColor Red " |_|  \_\___/|___/\___|_|  \_\__,_|_| |_|_|\_\___|\__,_|";
+Write-Host -ForegroundColor Red "     ";
+Write-Host "";
+Write-Host -ForegroundColor Blue "SSER:Ytext" -NoNewLine
+Write-Host -ForegroundColor Red "discord.gg/roserankedbedwars";
+Write-Host "";
 
-# Ensure Admin Privileges
 function Test-Admin {
     $currentUser = New-Object Security.Principal.WindowsPrincipal $([Security.Principal.WindowsIdentity]::GetCurrent())
     return $currentUser.IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)
