@@ -1,6 +1,6 @@
 $ErrorActionPreference = "SilentlyContinue"
 
-# Ensure script is run as Administrator
+# run as Administrator
 if (-not ([Security.Principal.WindowsPrincipal]([Security.Principal.WindowsIdentity]::GetCurrent())).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
     Start-Process -FilePath "powershell" -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
     exit
@@ -54,7 +54,6 @@ Display-Banner
 
 $stopwatch = [Diagnostics.Stopwatch]::StartNew()
 
-# Mount HKLM Registry Key if not mounted
 if (!(Get-PSDrive -Name HKLM -PSProvider Registry)) {
     try {
         New-PSDrive -Name HKLM -PSProvider Registry -Root HKEY_LOCAL_MACHINE
@@ -63,7 +62,6 @@ if (!(Get-PSDrive -Name HKLM -PSProvider Registry)) {
     }
 }
 
-# Parse BAM Keys
 $bamPaths = @("HKLM:\SYSTEM\CurrentControlSet\Services\bam\", "HKLM:\SYSTEM\CurrentControlSet\Services\bam\state\")
 try {
     $userSIDs = foreach ($path in $bamPaths) {
@@ -74,13 +72,11 @@ try {
     Exit
 }
 
-# Retrieve TimeZone Information
 $timeZoneInfo = Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInformation"
 $userTimeZone = $timeZoneInfo.TimeZoneKeyName
 $userBias = -([convert]::ToInt32([Convert]::ToString($timeZoneInfo.ActiveTimeBias, 2), 2))
 $userDaylightBias = -([convert]::ToInt32([Convert]::ToString($timeZoneInfo.DaylightBias, 2), 2))
 
-# Process BAM Entries
 function Process-BAMEntries {
     param ([string]$sid, [array]$paths)
 
@@ -121,7 +117,6 @@ foreach ($sid in $userSIDs) {
     $bamEntries += Process-BAMEntries -sid $sid -paths $bamPaths
 }
 
-# Display Results
 $bamEntries | Out-GridView -PassThru -Title "BAM Key Entries ($($bamEntries.Count)) - TimeZone: $userTimeZone (Bias: $userBias, Daylight Bias: $userDaylightBias)"
 
 $stopwatch.Stop()
