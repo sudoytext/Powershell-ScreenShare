@@ -53,7 +53,7 @@ Write-Host "";
 
 function Test-Admin {;$currentUser = New-Object Security.Principal.WindowsPrincipal $([Security.Principal.WindowsIdentity]::GetCurrent());$currentUser.IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator);}
 if (!(Test-Admin)) {
-    Write-Warning "run as adminastor nashode."
+    Write-Warning "it requires administration."
     Start-Sleep 5
     Exit
 }
