@@ -35,5 +35,5 @@ ScreenSharing Tool is a lightweight PowerShell-based script designed to extract 
    powershell -ExecutionPolicy Bypass -File .\ScreenSharingTool.ps1
    ```
 ## License
-
+THIS IS A REMAKE 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
