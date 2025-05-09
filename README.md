@@ -1,16 +1,5 @@
 
 ```markdown
-# ScreenSharing Tool
-
-ScreenSharing Tool is a lightweight PowerShell-based script designed to extract and display BAM (Background Activity Moderator) registry entries on Windows machines. The tool also validates file signatures and provides insights into user activity.
-
-## Features
-
-- **BAM Key Parsing**: Retrieves BAM registry entries for logged users.
-- **File Signature Validation**: Checks for the validity of executable file signatures.
-- **TimeZone Detection**: Displays local and UTC timestamps for last file access.
-- **Interactive UI**: Outputs results in a user-friendly grid view.
-
 ## Requirements
 
 - Windows Operating System
@@ -35,5 +24,4 @@ ScreenSharing Tool is a lightweight PowerShell-based script designed to extract 
    powershell -ExecutionPolicy Bypass -File .\ScreenSharingTool.ps1
    ```
 ## License
-THIS IS A REMAKE 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
